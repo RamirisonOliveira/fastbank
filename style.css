@@ -1,0 +1,306 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'roboto', sans-serif;
+}
+
+:root {
+  --color-primary: #7fdbbb;
+  --color-secundary: #91c8cd;
+  --black: hsla(0, 0%, 0%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+}
+
+body {
+  background: linear-gradient(0deg, #F0F8FF, hsla(0, 0%, 100%, 1));
+  padding: 0 1rem;
+}
+
+header, .hero-section, .courses-section, footer {
+  border-color: var(--black);
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  padding: 1.25rem;
+}
+
+header img {
+  display: block;
+  margin:  1rem auto;
+  max-width: 10rem;
+}
+
+header nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem auto;
+}
+
+nav a {
+  color: var(--black);
+  font-size: 1.25rem;
+  padding: .5rem;
+  text-decoration: none;
+}
+
+header nav a:nth-child(2n-1){
+  text-align: right;
+}
+
+.button {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-secundary);
+  color: var(--black);
+  border-radius: 0.5rem;
+  display: block;
+  font-size: 1.25rem;
+  padding: .75rem 1rem;
+  max-width: 14rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+}
+
+.hero-section {
+  padding-right: 0;
+  padding-bottom: 16rem;
+}
+
+.hero-section img {
+  display: block;
+  margin: 1.25rem 0 0 auto;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 105%;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.hero-section .button {
+  position: relative;
+}
+
+.hero-section .button::after {
+  content: '';
+  background: url("/img/arrow-curve.svg");
+  position: absolute;
+  top: 5rem;
+  right: -4rem;
+  height: 48px;
+  width: 132px;
+}
+
+.decoration {
+  display: block;
+  position: relative;
+}
+
+.decoration::after {
+  content: '';
+  background: url("/img/three-dashes.svg");
+  position: absolute;
+  top: -0.75rem;
+  height: 36px;
+  width: 40px;
+}
+
+.courses-section {
+  padding-bottom: 8rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.25rem;
+  margin-top: -8rem;
+  margin-bottom: 4rem;
+}
+
+.card {
+  background-color: var(--color-primary);
+  border: 1px solid var(--white);
+  max-width: 17rem;
+  padding: 2rem 0 0 2rem;
+}
+
+.card img {
+  width: 5rem;
+}
+
+.card:nth-child(2n) {
+  align-self: end;
+  background-color: var(--color-secundary);
+}
+
+.card strong {
+  display: block;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card a {
+  display: block;
+  margin: 3rem 0 0 auto;
+  width: fit-content;
+}
+
+footer {
+  border-bottom: 0;
+  padding: 1rem 1.25rem 4rem;
+}
+
+footer nav a {
+  display: block;
+  padding-left: 0;
+}
+
+.newsletter-form label {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.newsletter-form input {
+  border: 1px solid var(--color-primary);
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  padding: .5rem;
+  width: 100%;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-primary {
+color: var(--color-primary);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* resposividade */
+
+@media screen and (min-width: 40rem) {
+  header nav {
+    display: block;
+    text-align: center;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card:nth-child(2n) {
+    margin-top: 1rem;
+  }
+
+  .card img {
+    max-width: 4rem;
+
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  header div {
+    display: flex;
+    align-items: center;
+  }
+
+  header img, header nav, header .button{
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 72rem) {
+  h1 {
+    letter-spacing: 0.1rem;
+  }
+
+  h1, h2 {
+    font-size: 4rem;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 72rem;
+  }
+
+  .container.row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .about-column {
+    flex: 2;
+  }
+
+  .about-column p {
+    font-size: 1.25rem;
+    max-width: 16rem;
+  }
+
+  footer nav {
+    flex: 1;
+  }
+
+  .newsletter-form {
+    flex: 3;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .container {
+    max-width: 80rem;
+  }
+  .container img {
+    max-width: 5rem;
+  }
+  .hero-section img {
+    max-width: 35rem;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .button:hover{
+    transform: scale(1.1);
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+  }
+}
